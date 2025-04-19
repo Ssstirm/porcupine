@@ -18,10 +18,6 @@ let package = Package(
         )
     ],
     targets: [
-        .binaryTarget(
-            name: "PvPorcupine",
-            path: "lib/ios/PvPorcupine.xcframework"
-        ),
         .target(
             name: "Porcupine",
             dependencies: [
