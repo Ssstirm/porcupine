@@ -16,7 +16,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/Ssstirm/ios-voice-processor.git",
-            .branch("master")
+            .branch("main")
         )
     ],
     targets: [
