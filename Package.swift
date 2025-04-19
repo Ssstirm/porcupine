@@ -4,7 +4,8 @@ import PackageDescription
 let package = Package(
     name: "Porcupine-iOS",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13),
+        .visionOS(.v2)
     ],
     products: [
         .library(
@@ -13,9 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/Picovoice/ios-voice-processor.git",
-            .upToNextMajor(from: "1.2.0")
+        .product(name: "ios_voice_processor", package: "ios-voice-processor")
         )
     ],
     targets: [
