@@ -14,14 +14,21 @@ let package = Package(
         )
     ],
     dependencies: [
-        .product(name: "ios_voice_processor", package: "ios-voice-processor")
+        .package(
+            url: "https://github.com/Ssstirm/ios-voice-processor.git",
+            .upToNextMajor(from: "1.2.0")
         )
     ],
     targets: [
         .target(
+            name: "PvPorcupineC",
+            path: "lib/common",
+            publicHeadersPath: "."       // 使 pv_porcupine.h 可见
+        ),
+        .target(
             name: "Porcupine",
             dependencies: [
-                "PvPorcupine",
+                "PvPorcupineC",
                 .product(name: "ios_voice_processor", package: "ios-voice-processor")
             ],
             path: ".",
